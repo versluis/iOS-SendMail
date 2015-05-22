@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayB-JY-qjr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="qWp-HE-Dwd">
+                                <rect key="frame" x="0.0" y="5" width="600" height="595"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999973" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-T6-uO5">
+                                <rect key="frame" x="33" y="72" width="535" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">This delightful little demo will send an email using the MFMailComposeViewController, just as soon as you press the "Send Mail" button at the top right. It will create an email with hard-coded default values. Feel free to replace them with a better UI. To make it a little more interesting, we're attaching a delightful picture of two 3D ladies in bikinis.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jLT-T6-uO5" secondAttribute="bottom" constant="20" id="5Jp-ji-RTa"/>
+                            <constraint firstItem="jLT-T6-uO5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="D4t-jU-ccb"/>
+                            <constraint firstAttribute="trailing" secondItem="jLT-T6-uO5" secondAttribute="trailing" constant="32" id="OlA-05-c7x"/>
+                            <constraint firstItem="qWp-HE-Dwd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="U4Y-nP-2Kz"/>
+                            <constraint firstItem="jLT-T6-uO5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="33" id="VnC-R3-rIx"/>
+                            <constraint firstItem="qWp-HE-Dwd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="5" id="eQz-xH-rfG"/>
+                            <constraint firstItem="qWp-HE-Dwd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oFv-ye-CN9"/>
+                            <constraint firstItem="qWp-HE-Dwd" firstAttribute="centerX" secondItem="jLT-T6-uO5" secondAttribute="centerX" id="tDz-Cr-js2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DlB-6U-EMN">
+                        <barButtonItem key="rightBarButtonItem" title="Send Mail" id="Wn8-ri-yIH">
+                            <connections>
+                                <action selector="sendMail:" destination="BYZ-38-t0r" id="5mN-nZ-6IG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1110" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dli-Lw-gm1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayB-JY-qjr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="THL-hI-5nA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pae-ms-SJ6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUZ-wv-hxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="1090"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1000" height="1300"/>
+    </resources>
 </document>
